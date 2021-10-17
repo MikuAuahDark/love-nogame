@@ -911,8 +911,10 @@ function create_rain()
 
 	batch:clear()
 
-	if batch:getBufferSize() < batch_w * batch_h then
-		batch:setBufferSize(batch_w * batch_h)
+	if not SUPER_TOAST then
+		if batch:getBufferSize() < batch_w * batch_h then
+			batch:setBufferSize(batch_w * batch_h)
+		end
 	end
 
 	lockSpriteBatch(batch, true)
